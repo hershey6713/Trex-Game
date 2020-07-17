@@ -74,8 +74,6 @@ function draw() {
     }
 
     trex.velocityY = trex.velocityY + 0.8
-    
-    trex.collide(invisibleGround);
 
     ground.velocityX=-(4+3*score/100);
     if (ground.x < 0){
@@ -84,6 +82,7 @@ function draw() {
     
     spawnClouds();
     spawnObstacles();
+    trex.collide(invisibleGround);
     
     if (obstaclesGroup.isTouching(trex)) {
         gameState = end;
